@@ -18,7 +18,7 @@ const daftarSiswa = [
         ekstra: "PRAMUKA",
     },
     {
-        nama: "Yasmin",
+        nama: "Yasmin", 
         jenKel: "P",
         kelas: "X TEI 2",
         motivasi: "Melatih kekompakan dalam suatu tim",
