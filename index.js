@@ -1,7 +1,49 @@
 const daftarSiswa = [
     {
-        
-    }
+        nama: "Lala",
+        jenKel: "P",
+        kelas: "X PPLG 1",
+        motivasi: "Agar mahir menari",
+        alamat: "Ds. Kaliongkek",
+        noTelepon: "085376321224",
+        ekstra: "TARI",
+    },
+    {
+        nama: "Zadly",
+        jenKel: "L",
+        kelas: "X TM 2",
+        motivasi: "Menambah pengalaman",
+        alamat: "Ds. Tegalsari",
+        noTelepon: "082847613729",
+        ekstra: "PRAMUKA",
+    },
+    {
+        nama: "Yasmin",
+        jenKel: "P",
+        kelas: "X TEI 2",
+        motivasi: "Melatih kekompakan dalam suatu tim",
+        alamat: "Ds. UjungNegoro",
+        noTelepon: "081642849113",
+        ekstra: "PKS"
+    },
+    {
+        nama: "Sintari",
+        jenKel: "P",
+        kelas: "X TKL 1",
+        motivasi: "Agar bisa mengobati orang ",
+        alamat: "Ds. Karanggeneng",
+        noTelepon: "089736143392",
+        ekstra: "PMR"
+    },
+    {
+        nama: "dozzy",
+        jenKel: "L",
+        kelas: "X TBSM 1",
+        motivasi: "Melanjutkan bakat saya",
+        alamat: "Ds. Wonosegoro",
+        noTelepon: "087362724136",
+        ekstra: "TAEKWONDO"
+    },
 
 ]
 
