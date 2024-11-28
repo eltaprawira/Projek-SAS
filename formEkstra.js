@@ -30,7 +30,7 @@ const tampilkanSiswa = () => {
 const tambahSiswa = () => {
     const nama = document.getElementById("txtNama").value
     const gambar = document.getElementById("txtGambar").value
-    const jadwal = document.getElementById("txtJaadwal").value
+    const jadwal = document.getElementById("txtJadwal").value
 
 
 
