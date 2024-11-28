@@ -15,7 +15,7 @@ const tampilkanSiswa = () => {
 
         // mengakses dom
         const tblSiswa = document.getElementById('tblSiswa')
-        tblSiswa.innerHTML = `<tr><th>No</th><label>Nama</label><label>Gambar</label><label>Jadwal</label><th>Edit</th><th>Hapus</th></tr>`
+        tblSiswa.innerHTML = `<tr><th>No</th><th>Nama</th><th>Gambar</th><th>Jadwal</th><th>Edit</th><th>Hapus</th></tr>`
 
             
     for(let index in daftarSiswa) {
