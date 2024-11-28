@@ -15,14 +15,14 @@ const tampilkanSiswa = () => {
 
         // mengakses dom
         const tblSiswa = document.getElementById('tblSiswa')
-        tblSiswa.innerHTML = `<tr><th>No</th><label>Nama</label><label>Gambar</label><label>Jadwal</label><th>Edit</th><th>Hapus</th></tr>`
+        tblSiswa.innerHTML = `<tr><th>No</th><th>Nama</th><th>Gambar</th><label>Jadwal</label><th>Edit</th><th>Hapus</th></tr>`
 
             
     for(let index in daftarSiswa) {
-        console.log(`${parseInt(index) + 1}. ${daftarSiswa[index].nama} Email: ${daftarSiswa[index].gambar} jadwal: ${daftarSiswa[index].jadwal}`)
+        console.log(`${parseInt(index) + 1}. ${daftarSiswa[index].nama} Gambar: ${daftarSiswa[index].gambar} jadwal: ${daftarSiswa[index].jadwal}`)
 
         // menambah isinya
-        tblSiswa.innerHTML += `<tr><td>${parseInt(index) + 1}</td><td>${daftarSiswa[index].nama}</td><td>${daftarSiswa[index].gambar}</td><>${daftarSiswa[index].jadwal}</td><td><button type= "button" class="btn btn-warning" onclick= "editSiswa('${daftarSiswa[index].nama}')">Edit</button></td><td><button type= "button" class="btn btn-danger" onclick="hapusSiswa('${daftarSiswa[index].nama}')">Hapus</button></td></tr>`
+        tblSiswa.innerHTML += `<tr><td>${parseInt(index) + 1}</td><td>${daftarSiswa[index].nama}</td><td>${daftarSiswa[index].gambar}</td><td>${daftarSiswa[index].jadwal}</td><td><button type= "button" class="btn btn-warning" onclick= "editSiswa('${daftarSiswa[index].nama}')">Edit</button></td><td><button type= "button" class="btn btn-danger" onclick="hapusSiswa('${daftarSiswa[index].nama}')">Hapus</button></td></tr>`
     }
 }
 
