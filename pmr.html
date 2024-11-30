@@ -3,31 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>pmr</title>
+    <style>
+      body{
+          background: url(background.webp) repeat;
+          background-size: cover;
+      }
+      .nav{
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          background-color: rgb(94, 191, 247);
+          padding: 0px;
+          margin-top: -10px;
+          width: 187vh;
+
+      }
+      .img{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          width: 50px;
+          height: 50px;
+      }
+      
+      ul {
+          display: flex;
+          flex-direction: row;    
+          justify-content: center;
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+      }
+      ul h1{
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+      }
+      ul li {
+          float: left;
+      }
+      ul li a {
+          display: block;
+          color: rgb(18, 89, 112);
+          font-family: cursive;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+      }
+      li a:hover {
+          background-color: black;
+      }
+      .row{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+      }
+  </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="logo-smk.jpeg" alt="logo" width="30" height="24">
-                </a>             
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="home.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Form</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+      <div class="nav">
+        <div class="img">
+            <img src="logo-smk.jpeg" alt="">
+        </div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="index.html">Form</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
 
 
         <div class="row">
@@ -41,13 +88,20 @@
                         <div class="card-body">
                           <h1 class="card-title">PMR(Palang Merah Remaja)</h1>
                           <p class="card-text">
-                            PKS atau (Patroli Keamanan Sekolah) adalah suatu wadah dari partisipasi pelajar yang diwujudkn dalam bentuk
-                            pengaturan lalu lintas khususnya penyebrangan orang ditempat penyebarangan disekitar sekolah masing-masing. Dipks 
-                            mempelajari tentag PBB(Pengaturan Baris Berbaris),Senam Lantas, Turlantas Simulasi dan LCC(tantang hukum"berkendara dan lalulintas)
+                            PMR adalah wadah pembinaan yang dibentuk untuk mengajarkan nilai-nilai 
+                            kemanusiaan, kepemimpinan, dan keterampilan dasar dalam pelayanan masyarakat, 
+                            khususnya dalam bidang kesehatan dan pertolongan bencana.<br>1. Pertolongan 
+                            Pertama: Latihan untuk menangani kecelakaan kecil, cedera, atau situasi 
+                            darurat.<br> 2. Penyuluhan Kesehatan: Memberikan edukasi tentang kebersihan, 
+                            pola hidup sehat, dan pencegahan penyakit.<br> 3. Pelayanan Sosial: Membantu 
+                            masyarakat yang  terkena bencana, seperti banjir atau gempa bumi.<br>4. Kegiatan 
+                            Kemanusiaan: Partisipasi dalam donor darah, kampanye kemanusiaan, dan dukungan 
+                            psikososial.<br> 5. Lomba Keterampilan: Mengasah keterampilan melalui kompetisi 
+                            seperti lomba pertolongan pertama atau simulasi bencana.
                           </p>
                           <h4>Jadwal Ekstra</h4>
                           <p class="card-text"><small class="text-body-secondary">
-                            jumat: jam 14.00-17.00 wib
+                            selasa dan kamis: jam 15.45-17.00 wib
                           </small></p>
                         </div>
                       </div>
