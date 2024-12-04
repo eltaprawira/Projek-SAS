@@ -25,6 +25,7 @@
           justify-content: center;
           width: 50px;
           height: 50px;
+          
       }
       
       ul {
@@ -82,7 +83,18 @@
                     <div class="row g-0">
                       <div class="col-md-6">
                         <img src="atletik.jpeg" class="img-fluid rounded-start" alt="...">
+                        <h3>Hitung Jadwal Ekstrakurikuler</h3>
+                        <form id="schedule-form">
+                            <label for="weekly">Berapa kali berangkat dalam seminggu:</label>
+                            <input type="number" id="weekly" placeholder="Masukkan angka" required>
+                            <button type="submit">Hitung</button>
+                        </form>
+
+                        <p id="result"></p>
+                        <script src="mtk.js"></script>
+
                       </div>
+
                       <div class="col-md-6">
                         <div class="card-body">
                           <h1 class="card-title">ATLETIK</h1>
@@ -105,7 +117,8 @@
                           <p class="card-text"><small class="text-body-secondary">
                             senin-kamis: 15.45-17.15 wib<br>
                           </small></p>
-                          <a href="formPendaftaran.html" class="btn btn-primary" > daftar</a>
+
+                          <a href="formSiswa.html" class="btn btn-primary" > daftar</a>
                         </div>
                       </div>
                     </div>

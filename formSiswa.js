@@ -1,6 +1,5 @@
-const daftarSiswa = [
+const daftarSiswa = JSON.parse(localStorage.getItem('listDataSiswa')) || [];
 
-]
 
 let mode = 'tambah'
 
@@ -15,22 +14,20 @@ const tampilkanSiswa = () => {
 
         // mengakses dom
         const tblSiswa = document.getElementById('tblSiswa')
-        tblSiswa.innerHTML = `<tr><th>No</th><th>Nama</th><th>Email</th><th>Password</th><th>Jenis Kelamin</th><th>Alamat</th><th>NoTelepon</th><th>Edit</th><th>Hapus</th></tr>`
+        tblSiswa.innerHTML = `<tr><th>No</th><th>Nama</th><th>Jenis Kelamin</th><th>Alamat</th><th>NoTelepon</th><th>Edit</th><th>Hapus</th></tr>`
 
             
     for(let index in daftarSiswa) {
-        console.log(`${parseInt(index) + 1}. ${daftarSiswa[index].nama} Email: ${daftarSiswa[index].email} password: ${daftarSiswa[index].password} jenis kelamin: ${daftarSiswa[index].jenKel} alamatnya: ${daftarSiswa[index].alamat} nomor telepon: ${daftarSiswa[index].noTelepon}`)
+        console.log(`${parseInt(index) + 1}. ${daftarSiswa[index].nama} jenis kelamin: ${daftarSiswa[index].jenKel} alamatnya: ${daftarSiswa[index].alamat} nomor telepon: ${daftarSiswa[index].noTelepon}`)
 
         // menambah isinya
-        tblSiswa.innerHTML += `<tr><td>${parseInt(index) + 1}</td><td>${daftarSiswa[index].nama}</td><td>${daftarSiswa[index].email}</td><td>${daftarSiswa[index].password}</td><td>${daftarSiswa[index].jenKel}</td><td>${daftarSiswa[index].alamat}</td><td>${daftarSiswa[index].noTelepon}</td><td><button type= "button" class="btn btn-warning" onclick= "editSiswa('${daftarSiswa[index].nama}')">Edit</button></td><td><button type= "button" class="btn btn-danger" onclick="hapusSiswa('${daftarSiswa[index].nama}')">Hapus</button></td></tr>`
+        tblSiswa.innerHTML += `<tr><td>${parseInt(index) + 1}</td><td>${daftarSiswa[index].nama}</td><td>${daftarSiswa[index].jenKel}</td><td>${daftarSiswa[index].alamat}</td><td>${daftarSiswa[index].noTelepon}</td><td><button type= "button" class="btn btn-warning" onclick= "editSiswa('${daftarSiswa[index].nama}')">Edit</button></td><td><button type= "button" class="btn btn-danger" onclick="hapusSiswa('${daftarSiswa[index].nama}')">Hapus</button></td></tr>`
     }
 }
 
 // CREATE
 const tambahSiswa = () => {
     const nama = document.getElementById("txtNama").value
-    const email = document.getElementById("txtEmail").value
-    const password = document.getElementById("txtPassword").value
     const jenKel = document.getElementById("txtJenKel").value
     const alamat = document.getElementById("txtAlamat").value
     const noTelepon = document.getElementById("txtNotelp").value
@@ -40,8 +37,6 @@ const tambahSiswa = () => {
 
     const siswaBaru = {
     nama: nama,
-    email: email,
-    password: password,
     jenKel: jenKel,
     alamat: alamat,
     noTelepon: noTelepon,
@@ -55,13 +50,13 @@ const tambahSiswa = () => {
         // jika diedit
         daftarSiswa[mode] = siswaBaru
     }
+    localStorage.setItem('listDataSiswa',JSON.stringify(daftarSiswa));
+
 
     
     // daftarSiswa.push(siswaBaru)
 
     document.getElementById("txtNama").value =""
-    document.getElementById("txtEmail").value =""
-    document.getElementById("txtPassword").value =""
     document.getElementById("txtJenKel").value =""
     document.getElementById("txtAlamat").value =""
     document.getElementById("txtNotelp").value =""
@@ -102,8 +97,6 @@ const editSiswa = (target) => {
     const siswaDiedit = daftarSiswa[indexEdit];
 
         document.getElementById("txtNama").value = siswaDiedit.nama;
-        document.getElementById("txtEmail").value =siswaDiedit.email;
-        document.getElementById("txtPassword").value =siswaDiedit.password;
         document.getElementById("txtJenKel").value =siswaDiedit.jenKel;
         document.getElementById("txtAlamat").value =siswaDiedit.alamat;
         document.getElementById("txtNotelp").value =siswaDiedit.noTelepon;
@@ -122,8 +115,6 @@ const editSiswa = (target) => {
 
 const cancel = (target) => {
     document.getElementById("txtNama").value =""
-    document.getElementById("txtEmail").value =""
-    document.getElementById("txtPassword").value =""
     document.getElementById("txtJenKel").value =""
     document.getElementById("txtAlamat").value =""
     document.getElementById("txtNotelp").value =""

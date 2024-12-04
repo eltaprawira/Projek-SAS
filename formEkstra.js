@@ -1,74 +1,69 @@
-const daftarSiswa = [
+const daftarEkstra = JSON.parse(localStorage.getItem('listDataEkstra')) || [];
 
-]
 
 let mode = 'tambah'
 
 // LOOPING
 for (let i = 0; i < 1; i++) {
-    console.log(daftarSiswa)
+    console.log(daftarEkstra)
 }
 
 
 // menampilkan siswa
-const tampilkanSiswa = () => {
-
+const tampilkanEkstra = () => {
         // mengakses dom
-        const tblSiswa = document.getElementById('tblSiswa')
-        tblSiswa.innerHTML = `<tr><th>No</th><th>Nama</th><th>Gambar</th><th>Jadwal</th><th>Edit</th><th>Hapus</th></tr>`
+        const tblEkstra = document.getElementById('tblEkstra')
+        tblEkstra.innerHTML = `<tr><th>No</th><th>Nama</th><th>Motivasi</th><th>Edit</th><th>Hapus</th></tr>`
+        const daftarEkstra = JSON.parse(localStorage.getItem('listDataEkstra')) || [];
+
 
             
-    for(let index in daftarSiswa) {
-        console.log(`${parseInt(index) + 1}. ${daftarSiswa[index].nama} Gambar: ${daftarSiswa[index].gambar} jadwal: ${daftarSiswa[index].jadwal}`)
+    for(let index in daftarEkstra) {
+        console.log(`${parseInt(index) + 1}. ${daftarEkstra[index].nama} motivasi: ${daftarEkstra[index].motivasi}`)
 
         // menambah isinya
-        tblSiswa.innerHTML += `<tr><td>${parseInt(index) + 1}</td><td>${daftarSiswa[index].nama}</td><td>${daftarSiswa[index].gambar}</td><td>${daftarSiswa[index].jadwal}</td><td><button type= "button" class="btn btn-warning" onclick= "editSiswa('${daftarSiswa[index].nama}')">Edit</button></td><td><button type= "button" class="btn btn-danger" onclick="hapusSiswa('${daftarSiswa[index].nama}')">Hapus</button></td></tr>`
+        tblEkstra.innerHTML += `<tr><td>${parseInt(index) + 1}</td><td>${daftarEkstra[index].nama}</td><td>${daftarEkstra[index].motivasi}</td><td><button type= "button" class="btn btn-warning" onclick= "editSiswa('${daftarEkstra[index].nama}')">Edit</button></td><td><button type= "button" class="btn btn-danger" onclick="hapusSiswa('${daftarEkstra[index].nama}')">Hapus</button></td></tr>`
     }
 }
 
 // CREATE
-const tambahSiswa = () => {
-    const nama = document.getElementById("txtNama").value
-    const gambar = document.getElementById("txtGambar").value
-    const jadwal = document.getElementById("txtJadwal").value
+const tambahEkstra = () => {
+    const nama = document.getElementById("txtEkstra").value
+    const motivasi = document.getElementById("txtMotivasi").value
 
 
 
-
-
-    const siswaBaru = {
+    const ekstraBaru = {
     nama: nama,
-    gambar: gambar,
-    jadwal: jadwal,
+    motivasi: motivasi,
     }
 
 
     // Jika tambah
     if (mode == 'tambah') {
-        daftarSiswa.push(siswaBaru)
+        daftarEkstra.push(ekstraBaru)
     } else {
         // jika diedit
-        daftarSiswa[mode] = siswaBaru
+        daftarEkstra[mode] = ekstraBaru
     }
+   
 
     
     // daftarSiswa.push(siswaBaru)
-
-    document.getElementById("txtNama").value =""
-    document.getElementById("txtGambar").value =""
-    document.getElementById("txtJadwal").value =""
+    document.getElementById("txtEkstra").value =""
+    document.getElementById("txtMotivasi").value =""
 
     mode == 'tambah'
 
-    tampilkanSiswa()
+    tampilkanEkstra()
 }
 
 // mencari index/nama yng dicari diurutan berapa
 const cariIndex = (nama) => {
-    // tampilkan index jika nama siswa == nama
-    for (let i = 0; i < daftarSiswa.length; i++){
-        if (daftarSiswa[i].nama == nama) {
-            // console.log(daftarSiswa[1])
+    // tampilkan index jika nama esktra == nama
+    for (let i = 0; i < daftarEkstra.length; i++){
+        if (daftarEkstra[i].nama == nama) {
+            // console.log(daftarEkstra[1])
             return i
 
         }
@@ -76,25 +71,24 @@ const cariIndex = (nama) => {
     return -1
 }
 // DELETE
-const hapusSiswa = (target) => {
+const hapusEkstra = (target) => {
 
     const indexDihapus = cariIndex(target)
     // menghapus element dari dalam array
     if (indexDihapus !== -1) {
-        daftarSiswa.splice(indexDihapus, 1) 
-            tampilkanSiswa()
+        daftarEkstra.splice(indexDihapus, 1) 
+            tampilkanEkstra()
     }
 
 }
 
 // edit siswa
-const editSiswa = (target) => {
+const editEksra = (target) => {
     const indexEdit = cariIndex(target);
-    const siswaDiedit = daftarSiswa[indexEdit];
+    const ekstraDiedit = daftarEkstra[indexEdit];
 
-        document.getElementById("txtNama").value = siswaDiedit.nama;
-        document.getElementById("txtGambar").value =siswaDiedit.gambar;
-        document.getElementById("txtJadwal").value =siswaDiedit.jadwal;
+        document.getElementById("txtEkstra").value = ekstraDiedit.nama;
+        document.getElementById("txtMotivasi").value = ekstraDiedit.motivasi;
 
         mode =indexEdit
 
@@ -102,16 +96,14 @@ const editSiswa = (target) => {
         console.log(target)
         console.log(indexEdit)
     
-        console.log(daftarSiswa[indexEdit])
+        console.log(daftarEkstra[indexEdit])
     
 
 }
 
 const cancel = (target) => {
-    document.getElementById("txtNama").value =""
-    document.getElementById("txtGambar").value =""
-    document.getElementById("txtJadwal").value =""
-
+    document.getElementById("txtEkstra").value =""
+    document.getElementById("txtMotivasi").value =""
 
 
     mode = 'tambah'

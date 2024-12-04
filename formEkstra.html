@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>form ekstra</title>
     <style>
         body{
             background: url(background.webp) repeat;
@@ -68,66 +68,54 @@
         <div class="row">
             <div  class="col-12">
                 <div class="card">
+
                     <div class="card-body">
                       <div class="mb-3">
-                        <label class="form-label" >Nama</label>
-                        <input type="text" class="form-label" id="txtNama"></input>
+                        <label class="form-label">Ekstrakulikuler</label>
+                        <select class="form-control" id="txtEkstra">
+                            <option value="">Pilihan Ekstrakulikuler</option>
+                            <option value="PKS">PKS</option>
+                            <option value="PRAMUKA">PRAMUKA</option>
+                            <option value="PMR">PMR</option>
+                            <option value="PECINTA ALAM">PECINTA ALAM</option>
+                            <option value="VOLY">VOLY</option>
+                            <option value="BASKET">BASKET</option>
+                            <option value="TARI">TARI</option>
+                            <option value="ATLETIK">ATLETIK</option>
+                            <option value="PANAHAN">PANAHAN</option>
+                            <option value="TAEKWONDO">TAEKWONDO</option>
+                            <option value="FUTSAL">FUTSAL</option>
+                            <option value="PENCAK SILAT">PENCAK SILAT</option>
+                            <option value="ROHIS">ROHIS</option>
+                            <option value="TEATER">TEATER</option>
+                            <option value="KIR">KIR</option>
+                        </select>
                       </div>
+
+                      <div class="mb-3">
+                        <label class="form-label">Motivasi</label>
+                        <input type="text" class="form-control" id="txtMotivasi"/>
                       </div>
-                    <div class="card-body">
-                      <div class="mb-3">
-                        <label class="form-label">Gambar</label>
-                      <input type="text" class="form-label" id="txtGambar"></input>
-                    </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="mb-3">
-                        <label class="form-label">Jadwal</label>
-                      <input type="text" class="form-label" id="txtJadwal"></input>
+
                     </div>
 
-
-                    <div class="card">
-                        <div class="card-body">
-                           <div class="mb-2">
-                            <label class="form-label" >
-                                <a href="pks.html">pks</a>
-                                <a href="pramuka.jpeg">pramuka</a>
-                                <a href="pmr.jpeg">pmr</a>
-                                
-                            </label><br>
-                            <label class="form-label" >
-                                <a href="pramuka.jpeg">pramuka</a>
-                                <a href="pmr.jpeg">pmr</a>
-                                <a href="pmr.jpeg">pmr</a>
-                            </label><br>
-                            <label class="form-label" >
-                                <a href="pmr.jpeg">pmr</a>
-                                <a href="pmr.jpeg">pmr</a>
-                                <a href="pmr.jpeg">pmr</a>
-                            </label><br>
-                           </div>
-                        </div>
-                    </div> 
-                    
-                      
                     <div class="card-footer d-flex justify-content-between">
-                        <button class="btn btn-primary" onclick="tambahSiswa()">Simpan</button>
+                        <button class="btn btn-primary" onclick="tambahEkstra()">Simpan</button>
                         <button class="btn btn-secondary" onclick="cancel()">Cancel</button>
                     </div>
-                    </div>
+    
+            </div>
         </div>
 
                     <div class="card mt-5">
                         <div class="card-body">
-                            <table class="table table-success table-striped" id="tblSiswa">
+                            <table class="table table-success table-striped" id="tblEkstra">
                                 <div class="card-header bg-info">DAFTAR EKSTRA</div>
                                 <thead>
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
-                                        <th>Gambar</th>
-                                        <th>Jadwal</th>
+                                        <th>Motivasi</th>
                                         <th>Edit</th>
                                         <th>Hapus</th>
                                     </tr>
@@ -136,6 +124,9 @@
             
                                 </tbody>
                             </table>
+                            <div class="card-footer">
+                                <a href="formGabungan.html" class="btn btn-primary" > Selanjutnya</a>
+                            </div>
                         </div>
                     </div>
             
